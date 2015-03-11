@@ -15,4 +15,3 @@ password = 'choronopay'
 login_res = client.service.Login(login, password)
 
 result = client.service.getAgreements(agrmid=1410)
-print result
