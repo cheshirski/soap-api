@@ -38,6 +38,7 @@ login = 'choronopay'
 password = 'choronopay'
 
 timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+agrmid = str(form['cs1'].value)
 
 # Осуществляем подключение к биллингу
 login_res = client.service.Login(login, password)
@@ -51,7 +52,7 @@ soap_payment.receipt = str(form['transaction_id'].value)  # идентифика
 # soap_payment.comment = 'TEST'  # тут и ежу понятно
 soap_payment.classid = 0  # идентификатор категории платежа
 
-result = client.service.ExternPayment(11, 779, 0, soap_payment, notexists=1)
+result = client.service.ExternPayment(11, agrmid, 0, soap_payment, notexists=1)
 
 client.service.Logout()
 
