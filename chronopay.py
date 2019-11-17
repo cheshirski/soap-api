@@ -55,5 +55,3 @@ soap_payment.classid = 0  # идентификатор категории пла
 result = client.service.ExternPayment(11, agrmid, 0, soap_payment, notexists=1)
 
 client.service.Logout()
-
-print "200 OK"
